@@ -38,10 +38,6 @@ const Counter = memo(function Counter({initialCount}) {
     {value: initialCount, id: Math.random() * 1000},
   ]);
 
-  useEffect(() => {
-    setCounterChanges([{value: initialCount, id: Math.random() * 1000}]);
-  }, [initialCount]);
-
   const currentCounter = counterChanges.reduce(
     (prevCounter, counterChange) => prevCounter + counterChange.value,
     0
